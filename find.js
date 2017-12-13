@@ -18,10 +18,10 @@ var distance = function (x0, y0, x1, y1) {
 
 
 var findIt = function(e) {
-  dist = distance(targetX,targetY,clientX,clientY);
-  maxDistance = distance(0,0,boxHeight,boxWidth);
-  scaledColor = (dist * 255)/maxDistance;
-  box.style.color = rgb(scaledColor,0,0);
+    dist = distance(targetX,targetY,e.clientX,e.clientY);
+    maxDistance = distance(0,0,boxHeight,boxWidth);
+    scaledColor = Math.floor((dist * 255)/maxDistance);
+    box.style.color = "rgb("+scaledColor+",0,0)";
 };
 
 /*
