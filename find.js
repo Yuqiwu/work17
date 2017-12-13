@@ -18,15 +18,14 @@ var distance = function (x0, y0, x1, y1) {
 
 
 var findIt = function(e) {
-    dist = distance(targetX,targetY,e.clientX,e.clientY);
-    maxDistance = distance(0,0,boxHeight,boxWidth);
+    maxDistance = distance(0,0,targetX,targetY);
+    dist = maxDistance - distance(targetX,targetY,e.clientX,e.clientY);
     scaledColor = Math.floor((dist * 255)/maxDistance);
-    box.style.color = "rgb("+scaledColor+",0,0)";
+    box.style.backgroundColor = "rgb("+scaledColor+",0,0)";
 };
 
 /*
 your OTHER FXNS
-
 */
 
 box.addEventListener("mousemove", findIt);
